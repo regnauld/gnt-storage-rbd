@@ -119,7 +119,7 @@ class RBD(object):
             if self.isMapped(name, pool) is False:
                 return False
 
-        sys.stdout.write("%s\nrbd:%s/%s" %
+        sys.stdout.write("%s\nkvm:rbd:%s/%s" %
                          (self.isMapped(name, pool)['dev'], pool, name))
         return True
 
