@@ -23,9 +23,9 @@ from common import env
 from common import rados
 
 if __name__ == '__main__':
-    conf = config.config('storage.conf')
-    enviroment = env.env()
-    rbd = rados.rbd()
+    conf = config.config('/usr/share/ganeti/extstorage/rbd2/storage.conf')
+    enviroment = env.Env()
+    rbd = rados.RBD()
 
     ret = rbd.isVol(enviroment.get('VOL_NAME'), conf.pool)
     if ret is True:

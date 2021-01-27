@@ -6,6 +6,8 @@ Created on 12.02.2013
 import sys
 import re
 
+sys.path.append('/usr/share/ganeti/2.16')
+
 from ganeti import utils
 from common import env
 
@@ -16,7 +18,7 @@ class RBD(object):
     enviroment = None
 
     def __init__(self):
-        self.enviroment = env.env()
+        self.enviroment = env.Env()
 
     def isPool(self, pool='rbd'):
         if pool is None:
