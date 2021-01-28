@@ -23,7 +23,7 @@ from common import env
 from common import rados
 
 if __name__ == '__main__':
-    conf = config.config('/usr/share/ganeti/extstorage/rbd2/storage.conf')
+    conf = config.config('/usr/share/ganeti/extstorage/rbd-ssd/storage.conf')
     enviroment = env.Env()
     rbd = rados.RBD()
 

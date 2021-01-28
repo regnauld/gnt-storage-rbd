@@ -234,6 +234,7 @@ class RBD(object):
 
         result = utils.RunCmd(["rbd", "create", "-p", "%s" %
                                pool, "%s" % name, "--size", "%s" % size])
+
         if result.failed:
             sys.stderr.write("Can't create Image %s from cluster with rbd create: %s - %s" %
                              (name, result.fail_reason, result.output))
