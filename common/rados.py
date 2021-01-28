@@ -232,8 +232,10 @@ class RBD(object):
             sys.stderr.write('Volume already exists')
             return False
 
-        result = utils.RunCmd(["rbd", "create", "-p", "%s" %
-                               pool, "%s" % name, "--size", "%s" % size])
+        #result = utils.RunCmd(["rbd", "create", "-p", "%s" %
+        #                       pool, "%s" % name, "--size", "%s" % size])
+		result = utils.RunCmd(["rbd", "create", "-p", "%s" %
+                                pool, "%s" % name, "--size", "%s" % size, "--data-pool", "vms-ssd-ec-52"])
 
         if result.failed:
             sys.stderr.write("Can't create Image %s from cluster with rbd create: %s - %s" %
